@@ -12,6 +12,11 @@ module.exports = function (config) {
       require('karma-coverage'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
+    parserOptions: {
+      project: "tsconfig.json",
+      tsconfigRootDir: __dirname,
+      sourceType: "module",
+    },
     client: {
       jasmine: {
         // you can add configuration options for Jasmine here

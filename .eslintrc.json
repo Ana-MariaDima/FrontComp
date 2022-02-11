@@ -5,8 +5,8 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["tsconfig.json", "e2e/tsconfig.json"],
-        "createDefaultProgram": true
+        "project":  ["licenta/tsconfig.json", "licenta/e2e/tsconfig.json"],
+        "createDefaultProgram": true,
       },
       "extends": [
         "plugin:@angular-eslint/ng-cli-compat",
