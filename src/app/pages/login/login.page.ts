@@ -1,8 +1,8 @@
 
 import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/auth.service';
-import { User } from 'src/app/user';
+import { AuthService } from 'src/app/services/Authentication/auth.service';
+import { User } from 'src/app/interfaces/user';
 
 
 @Component({
@@ -12,9 +12,7 @@ import { User } from 'src/app/user';
 })
 export class LoginPage implements OnInit{
 
-  public isDisabled: boolean=false;
-  public pass:'';
-  public username:'';
+
   public user: User ={
     username:'',
     password:''
@@ -67,7 +65,7 @@ export class LoginPage implements OnInit{
   }*/
   doLogin():void {
     this.error=false;
-    console.log('Login Clicked', this.user, this.isDisabled);
+    console.log('Login Clicked', this.user);
 
     if(this.validateEmail(this.user.username))
     {
@@ -76,7 +74,7 @@ export class LoginPage implements OnInit{
         if(response && response.token)
         {
           localStorage.setItem('token', response.token);
-          this.router.navigate(['/tabs/tab1']);
+          this.router.navigate(['']);
         }
       })
     }

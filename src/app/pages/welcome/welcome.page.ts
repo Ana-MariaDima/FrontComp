@@ -10,13 +10,13 @@ export class WelcomePage implements OnInit {
   public test:String = "";
   constructor(private router: Router) { }
 
-  ngOnInit() {
-  }
-
 
   navigateToLogin() {
-    //this.router.navigate(['/login']);
-    console.log(this.test)
+    this.router.navigate(['/login']);
+   // console.log(this.test)
+  }
+
+  ngOnInit() {
   }
 
 }
